@@ -37,7 +37,8 @@ public class QueueExercise {
      * Stack behavior.
      */
     public Deque<String> createQueue(){
-        return null;
+        ArrayDeque<String> deck = new ArrayDeque<>();
+        return deck;
     }
 
     /**
@@ -46,7 +47,7 @@ public class QueueExercise {
      * @return the length of queue.
      */
     public int getSize(Queue<String> queue){
-        return 0;
+        return queue.size();
     }
 
     /**
@@ -56,6 +57,9 @@ public class QueueExercise {
      * @param item a String that should be added to Queue.
      */
     public void addToEndOfQueue(Queue<String> queue, String item){
+        // do offer and add have a difference
+        // queue.add(item);
+        queue.offer(item);
 
     }
 
@@ -66,7 +70,9 @@ public class QueueExercise {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        return "";
+        // the documentation noted the only difference being remove throwing exception while poll return null
+        //return queue.remove();
+        return queue.poll();
     }
 
     /**
@@ -76,6 +82,6 @@ public class QueueExercise {
      * @return the next String due to be removed (peeked) from the Queue<String> (the oldest item in the queue.)
      */
     public String getStartOfQueueWithoutRemoving(Queue<String> queue){
-        return "";
+        return queue.peek();
     }
 }
